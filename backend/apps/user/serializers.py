@@ -2,16 +2,16 @@ from .models import User
 from rest_framework import serializers
 
 
-class UserSerialiser(serializers.ModelSerialiser):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         exclude = ("password",)
 
 
-class UserCreateSerialiser(serializers.ModelSerialiser):
+class UserCreateSerializer(serializers.ModelSerializer):
     class Meta:
         models = User
-        fileds = (
+        fields = (
             "id",
             "username",
             "email",
